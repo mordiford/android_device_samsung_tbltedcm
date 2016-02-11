@@ -12,10 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# inherit from common trlte
--include device/samsung/trlte-common/BoardConfigCommon.mk
+# inherit from common tblte
+-include device/samsung/tblte-common/BoardConfigCommon.mk
 
-TARGET_OTA_ASSERT_DEVICE := trltexx,trltedt
+TARGET_OTA_ASSERT_DEVICE := tblte,tbltedcm
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144
@@ -26,18 +26,18 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3774873600 #910T uses: 3984588800
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 27019685888 #910T uses: 26558312448
 
 # Kernel
-TARGET_KERNEL_VARIANT_CONFIG := apq8084_sec_trlte_eur_defconfig
+TARGET_KERNEL_VARIANT_CONFIG := apq8084_sec_tblte_dcm_defconfig
 
 # Camera
 TARGET_FIXUP_PREVIEW := true
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_LIBINIT_DEFINES_FILE := device/samsung/trltexx/init/init_trlte.c
+TARGET_LIBINIT_DEFINES_FILE := device/samsung/tbltedcm/init/init_tblte.c
 TARGET_UNIFIED_DEVICE := true
 
 # Radio
-BOARD_RIL_CLASS := ../../../device/samsung/trltexx/ril
+BOARD_RIL_CLASS := ../../../device/samsung/tbltedcm/ril
 
 # inherit from the proprietary version
--include vendor/samsung/trltexx/BoardConfigVendor.mk
+-include vendor/samsung/tbltedcm/BoardConfigVendor.mk
