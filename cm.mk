@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-$(call inherit-product, device/samsung/tbltexx/full_trltexx.mk)
+$(call inherit-product, device/samsung/tbltedcm/full_tbltedcm.mk)
 
 # Enhanced NFC
 $(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
