@@ -55,8 +55,8 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     property_get("ro.bootloader", bootloader);
 
     if (strstr(bootloader, "SC01G")) {
-        property_set("ro.build.fingerprint", "samsung/SC-01G/SC-01G:4.4.4/KTU84P/SC01GOMU1AOD1:user/release-keys");
-        property_set("ro.build.description", "tbltedcm-user 4.4.4 KTU84P SC01GOMU1AOD1 release-keys");
+        property_set("ro.build.fingerprint", "samsung/SC-01G/SC-01G:5.0.1/LRX22C/SC01GOMU1BOH7:user/release-keys");
+        property_set("ro.build.description", "tbltedcm-user 5.0.1 LRX22C SC01GOMU1BOH7 release-keys");
         property_set("ro.product.model", "SC-01G");
         property_set("ro.product.device", "tbltedcm");
         gsm_properties();
