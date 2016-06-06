@@ -36,12 +36,17 @@
 
 #include "init_msm.h"
 
+void gsm_properties()
+{
+    property_set("telephony.lteOnGsmDevice", "1");
+    property_set("ro.telephony.default_network", "9");
+    property_set("ro.telephony.ril.config", "newDialCode");
+    property_set("ro.ril.enable.dcm.feature", "1");
+}
+
 void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *board_type)
 {
     char platform[PROP_VALUE_MAX];
-    char bootloader[PROP_VALUE_MAX];
-    char device[PROP_VALUE_MAX];
-    char devicename[PROP_VALUE_MAX];
     int rc;
 
     UNUSED(msm_id);
@@ -52,23 +57,10 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
     if (!rc || !ISMATCH(platform, ANDROID_TARGET))
         return;
 
-    property_get("ro.bootloader", bootloader);
-
-    if (strstr(bootloader, "SC01G")) {
-        property_set("ro.build.fingerprint", "samsung/SC-01G/SC-01G:5.0.1/LRX22C/SC01GOMU1BOH7:user/release-keys");
-        property_set("ro.build.description", "tbltedcm-user 5.0.1 LRX22C SC01GOMU1BOH7 release-keys");
-        property_set("ro.product.model", "SC-01G");
-        property_set("ro.product.device", "tbltedcm");
-        gsm_properties();
-    }
-
-    property_get("ro.product.device", device);
-    strlcpy(devicename, device, sizeof(devicename));
-    INFO("Found bootloader id %s setting build properties for %s device\n", bootloader, devicename);
-}
-
-void gsm_properties()
-{
-    property_set("telephony.lteOnGsmDevice", "1");
-    property_set("ro.telephony.default_network", "9");
+    property_set("ro.build.fingerprint", "samsung/SC-01G/SC-01G:5.0.1/LRX22C/SC01GOMU1BOH7:user/release-keys");
+    property_set("ro.build.description", "tbltedcm-user 5.0.1 LRX22C SC01GOMU1BOH7 release-keys");
+    property_set("ro.product.model", "SC-01G");
+    property_set("ro.product.device", "tbltedcm");
+    property_set("ro.product.name", "SC-01G");
+    gsm_properties();
 }
