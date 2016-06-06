@@ -27,6 +27,7 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 27019685888 #910T uses: 26558312448
 
 # Kernel
 TARGET_KERNEL_VARIANT_CONFIG := apq8084_sec_tblte_dcm_defconfig
+BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 dwc3_msm.cpu_to_affin=1 androidboot.selinux=permissive
 
 # Camera
 TARGET_FIXUP_PREVIEW := true
