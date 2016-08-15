@@ -33,8 +33,7 @@ BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom user_debug=31 msm
 TARGET_FIXUP_PREVIEW := true
 
 # Init
-TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_LIBINIT_DEFINES_FILE := device/samsung/tbltedcm/init/init_tblte.cpp
+TARGET_INIT_VENDOR_LIB := libinit_tbltedcm
 TARGET_UNIFIED_DEVICE := true
 
 # Radio
